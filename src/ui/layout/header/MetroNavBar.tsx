@@ -1,9 +1,13 @@
 import React from "react";
 import NavLinks from "./NavElements/NavLinks";
+import NavLinksElement from "./NavElements/NavLinksElements/NavLinksElement";
+import NavLinksChildElement from "./NavElements/NavLinksElements/NavLinksChildElements/NavLinksChildElement";
+import InLineChildElement from "./NavElements/NavLinksElements/NavLinksChildElements/InLineChildElement";
+import "./MetroNavBar.css";
 
 export default function () {
   return (
-    <>
+    <div className="nav-container">
       <div id="kt_header" className="header bg-white align-items-stretch">
         <div className="container-fluid d-flex align-items-stretch justify-content-between">
           <div
@@ -77,469 +81,112 @@ export default function () {
                   id="#kt_header_menu"
                   data-kt-menu="true"
                 >
-                  <NavLinks text="Home"></NavLinks>
-                  {/* <div className="menu-item me-lg-1">
-                    <a
-                      className="menu-link py-3 active"
-                      href="/metronic8/react/demo4/dashboard"
-                    >
-                      <span className="menu-title">Home</span>
-                    </a>
-                  </div> */}
-                  <NavLinks text="Admin"></NavLinks>
-                  {/* <div className="menu-item me-lg-1">
-                    <a
-                      className="menu-link py-3"
-                      href="/metronic8/react/demo4/builder"
-                    >
-                      <span className="menu-title">Layout Builder</span>
-                    </a>
-                  </div> */}
-                  <div
+                  <NavLinks
+                    text="Dashboard"
+                    className="menu-item me-lg-1"
+                  ></NavLinks>
+
+                  <NavLinks
+                    text="Layout Builder"
+                    className="menu-item me-lg-1"
+                  ></NavLinks>
+
+                  <NavLinks
+                    text="Crafted"
                     className="menu-item menu-lg-down-accordion me-lg-1"
                     data-kt-menu-trigger="click"
                     data-kt-menu-placement="bottom-start"
                   >
-                    <span className="menu-link py-3">
-                      <span className="menu-title">Crafted</span>
-                    </span>
                     <div
                       className="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px"
                       data-kt-menu-dismiss="true"
                     >
-                      <div
-                        className="menu-item menu-lg-down-accordion me-lg-1"
-                        data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                        data-kt-menu-placement="right-start"
-                      >
-                        <span className="menu-link py-3">
-                          <span className="menu-icon">
-                            <i className="bi fs-3 bi-archive"></i>
-                          </span>
-                          <span className="menu-title">Pages</span>
-                          <span className="menu-arrow"></span>
-                        </span>
+                      <NavLinksElement text="Pages" icons="bi fs-3 bi -archive">
                         <div
                           className="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px"
                           data-kt-menu-dismiss="true"
                         >
-                          <div
-                            className="menu-item menu-lg-down-accordion me-lg-1"
-                            data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                            data-kt-menu-placement="right-start"
-                          >
-                            <span className="menu-link py-3">
-                              <span className="menu-bullet">
-                                <span className="bullet bullet-dot"></span>
-                              </span>
-                              <span className="menu-title">Profile</span>
-                              <span className="menu-arrow"></span>
-                            </span>
+                          <NavLinksElement text="Profile">
                             <div
                               className="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px"
                               data-kt-menu-dismiss="true"
                             >
-                              <div className="menu-item me-lg-1">
-                                <a
-                                  className="menu-link py-3"
-                                  href="/metronic8/react/demo4/crafted/pages/profile/overview"
-                                >
-                                  <span className="menu-bullet">
-                                    <span className="bullet bullet-dot"></span>
-                                  </span>
-                                  <span className="menu-title">Overview</span>
-                                </a>
-                              </div>
-                              <div className="menu-item me-lg-1">
-                                <a
-                                  className="menu-link py-3"
-                                  href="/metronic8/react/demo4/crafted/pages/profile/projects"
-                                >
-                                  <span className="menu-bullet">
-                                    <span className="bullet bullet-dot"></span>
-                                  </span>
-                                  <span className="menu-title">Projects</span>
-                                </a>
-                              </div>
-                              <div className="menu-item me-lg-1">
-                                <a
-                                  className="menu-link py-3"
-                                  href="/metronic8/react/demo4/crafted/pages/profile/campaigns"
-                                >
-                                  <span className="menu-bullet">
-                                    <span className="bullet bullet-dot"></span>
-                                  </span>
-                                  <span className="menu-title">Campaigns</span>
-                                </a>
-                              </div>
-                              <div className="menu-item me-lg-1">
-                                <a
-                                  className="menu-link py-3"
-                                  href="/metronic8/react/demo4/crafted/pages/profile/documents"
-                                >
-                                  <span className="menu-bullet">
-                                    <span className="bullet bullet-dot"></span>
-                                  </span>
-                                  <span className="menu-title">Documents</span>
-                                </a>
-                              </div>
-                              <div className="menu-item me-lg-1">
-                                <a
-                                  className="menu-link py-3"
-                                  href="/metronic8/react/demo4/crafted/pages/profile/connections"
-                                >
-                                  <span className="menu-bullet">
-                                    <span className="bullet bullet-dot"></span>
-                                  </span>
-                                  <span className="menu-title">
-                                    Connections
-                                  </span>
-                                </a>
-                              </div>
+                              <NavLinksChildElement text="Overview" />
+                              <NavLinksChildElement text="Projects" />
+                              <NavLinksChildElement text="Campaigns" />
+                              <NavLinksChildElement text="Document" />
+                              <NavLinksChildElement text="Connection" />
                             </div>
-                          </div>
-                          <div
-                            className="menu-item menu-lg-down-accordion me-lg-1"
-                            data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                            data-kt-menu-placement="right-start"
-                          >
-                            <span className="menu-link py-3">
-                              <span className="menu-bullet">
-                                <span className="bullet bullet-dot"></span>
-                              </span>
-                              <span className="menu-title">Wizards</span>
-                              <span className="menu-arrow"></span>
-                            </span>
+                          </NavLinksElement>
+
+                          <NavLinksElement text="Wizards">
                             <div
                               className="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px"
                               data-kt-menu-dismiss="true"
                             >
-                              <div className="menu-item me-lg-1">
-                                <a
-                                  className="menu-link py-3"
-                                  href="/metronic8/react/demo4/crafted/pages/wizards/horizontal"
-                                >
-                                  <span className="menu-bullet">
-                                    <span className="bullet bullet-dot"></span>
-                                  </span>
-                                  <span className="menu-title">Horizontal</span>
-                                </a>
-                              </div>
-                              <div className="menu-item me-lg-1">
-                                <a
-                                  className="menu-link py-3"
-                                  href="/metronic8/react/demo4/crafted/pages/wizards/vertical"
-                                >
-                                  <span className="menu-bullet">
-                                    <span className="bullet bullet-dot"></span>
-                                  </span>
-                                  <span className="menu-title">Vertical</span>
-                                </a>
-                              </div>
+                              <NavLinksChildElement text="Horizontal" />
+                              <NavLinksChildElement text="Verticale" />
                             </div>
-                          </div>
+                          </NavLinksElement>
                         </div>
-                      </div>
-                      <div
-                        className="menu-item menu-lg-down-accordion me-lg-1"
-                        data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                        data-kt-menu-placement="right-start"
+                      </NavLinksElement>
+
+                      <NavLinksElement
+                        text="Accounts"
+                        icons="bi fs-3 bi -person"
                       >
-                        <span className="menu-link py-3">
-                          <span className="menu-icon">
-                            <i className="bi fs-3 bi-person"></i>
-                          </span>
-                          <span className="menu-title">Accounts</span>
-                          <span className="menu-arrow"></span>
-                        </span>
                         <div
                           className="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px"
                           data-kt-menu-dismiss="true"
                         >
-                          <div className="menu-item me-lg-1">
-                            <a
-                              className="menu-link py-3"
-                              href="/metronic8/react/demo4/crafted/account/overview"
-                            >
-                              <span className="menu-bullet">
-                                <span className="bullet bullet-dot"></span>
-                              </span>
-                              <span className="menu-title">Overview</span>
-                            </a>
-                          </div>
-                          <div className="menu-item me-lg-1">
-                            <a
-                              className="menu-link py-3"
-                              href="/metronic8/react/demo4/crafted/account/settings"
-                            >
-                              <span className="menu-bullet">
-                                <span className="bullet bullet-dot"></span>
-                              </span>
-                              <span className="menu-title">Settings</span>
-                            </a>
-                          </div>
+                          <NavLinksChildElement text="Overview" />
+                          <NavLinksChildElement text="Settings" />
                         </div>
-                      </div>
-                      <div
-                        className="menu-item menu-lg-down-accordion me-lg-1"
-                        data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                        data-kt-menu-placement="right-start"
-                      >
-                        <span className="menu-link py-3">
-                          <span className="menu-icon">
-                            <i className="bi fs-3 bi-sticky"></i>
-                          </span>
-                          <span className="menu-title">Errors</span>
-                          <span className="menu-arrow"></span>
-                        </span>
+                      </NavLinksElement>
+
+                      <NavLinksElement text="Errors" icons="bi fs-3 bi -sticky">
                         <div
                           className="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px"
                           data-kt-menu-dismiss="true"
                         >
-                          <div className="menu-item me-lg-1">
-                            <a
-                              className="menu-link py-3"
-                              href="/metronic8/react/demo4/error/404"
-                            >
-                              <span className="menu-bullet">
-                                <span className="bullet bullet-dot"></span>
-                              </span>
-                              <span className="menu-title">Error 404</span>
-                            </a>
-                          </div>
-                          <div className="menu-item me-lg-1">
-                            <a
-                              className="menu-link py-3"
-                              href="/metronic8/react/demo4/error/500"
-                            >
-                              <span className="menu-bullet">
-                                <span className="bullet bullet-dot"></span>
-                              </span>
-                              <span className="menu-title">Error 500</span>
-                            </a>
-                          </div>
+                          <NavLinksChildElement text="Error 404" />
+                          <NavLinksChildElement text="Error 403" />
                         </div>
-                      </div>
-                      <div
-                        className="menu-item menu-lg-down-accordion me-lg-1"
-                        data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                        data-kt-menu-placement="right-start"
-                      >
-                        <span className="menu-link py-3">
-                          <span className="menu-icon">
-                            <i className="bi fs-3 bi-layers"></i>
-                          </span>
-                          <span className="menu-title">Widgets</span>
-                          <span className="menu-arrow"></span>
-                        </span>
+                      </NavLinksElement>
+
+                      <NavLinksElement text="Widget" icons="bi fs-3 bi -layers">
                         <div
                           className="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px"
                           data-kt-menu-dismiss="true"
                         >
-                          <div className="menu-item me-lg-1">
-                            <a
-                              className="menu-link py-3"
-                              href="/metronic8/react/demo4/crafted/widgets/lists"
-                            >
-                              <span className="menu-bullet">
-                                <span className="bullet bullet-dot"></span>
-                              </span>
-                              <span className="menu-title">Lists</span>
-                            </a>
-                          </div>
-                          <div className="menu-item me-lg-1">
-                            <a
-                              className="menu-link py-3"
-                              href="/metronic8/react/demo4/crafted/widgets/statistics"
-                            >
-                              <span className="menu-bullet">
-                                <span className="bullet bullet-dot"></span>
-                              </span>
-                              <span className="menu-title">Statistics</span>
-                            </a>
-                          </div>
-                          <div className="menu-item me-lg-1">
-                            <a
-                              className="menu-link py-3"
-                              href="/metronic8/react/demo4/crafted/widgets/charts"
-                            >
-                              <span className="menu-bullet">
-                                <span className="bullet bullet-dot"></span>
-                              </span>
-                              <span className="menu-title">Charts</span>
-                            </a>
-                          </div>
-                          <div className="menu-item me-lg-1">
-                            <a
-                              className="menu-link py-3"
-                              href="/metronic8/react/demo4/crafted/widgets/mixed"
-                            >
-                              <span className="menu-bullet">
-                                <span className="bullet bullet-dot"></span>
-                              </span>
-                              <span className="menu-title">Mixed</span>
-                            </a>
-                          </div>
-                          <div className="menu-item me-lg-1">
-                            <a
-                              className="menu-link py-3"
-                              href="/metronic8/react/demo4/crafted/widgets/tables"
-                            >
-                              <span className="menu-bullet">
-                                <span className="bullet bullet-dot"></span>
-                              </span>
-                              <span className="menu-title">Tables</span>
-                            </a>
-                          </div>
-                          <div className="menu-item me-lg-1">
-                            <a
-                              className="menu-link py-3"
-                              href="/metronic8/react/demo4/crafted/widgets/feeds"
-                            >
-                              <span className="menu-bullet">
-                                <span className="bullet bullet-dot"></span>
-                              </span>
-                              <span className="menu-title">Feeds</span>
-                            </a>
-                          </div>
+                          <NavLinksChildElement text="Lists" />
+                          <NavLinksChildElement text="Statistics" />
+                          <NavLinksChildElement text="Charts" />
+                          <NavLinksChildElement text="Mixed" />
+                          <NavLinksChildElement text="Tables" />
+                          <NavLinksChildElement text="Feeds" />
                         </div>
-                      </div>
+                      </NavLinksElement>
                     </div>
-                  </div>
-                  <div
+                  </NavLinks>
+                  <NavLinks
+                    text="Apps"
                     className="menu-item menu-lg-down-accordion me-lg-1"
                     data-kt-menu-trigger="click"
                     data-kt-menu-placement="bottom-start"
                   >
-                    <span className="menu-link py-3">
-                      <span className="menu-title">Apps</span>
-                    </span>
-                    <div
-                      className="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px"
-                      data-kt-menu-dismiss="true"
-                    >
-                      <div
-                        className="menu-item menu-lg-down-accordion me-lg-1"
-                        data-kt-menu-trigger="{default:'click', lg: 'hover'}"
-                        data-kt-menu-placement="right-start"
-                      >
-                        <span className="menu-link py-3">
-                          <span className="menu-icon">
-                            <span className="svg-icon svg-icon-2">
-                              <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="mh-50px"
-                              >
-                                <path
-                                  opacity="0.3"
-                                  d="M20 3H4C2.89543 3 2 3.89543 2 5V16C2 17.1046 2.89543 18 4 18H4.5C5.05228 18 5.5 18.4477 5.5 19V21.5052C5.5 22.1441 6.21212 22.5253 6.74376 22.1708L11.4885 19.0077C12.4741 18.3506 13.6321 18 14.8167 18H20C21.1046 18 22 17.1046 22 16V5C22 3.89543 21.1046 3 20 3Z"
-                                  fill="currentColor"
-                                ></path>
-                                <rect
-                                  x="6"
-                                  y="12"
-                                  width="7"
-                                  height="2"
-                                  rx="1"
-                                  fill="currentColor"
-                                ></rect>
-                                <rect
-                                  x="6"
-                                  y="7"
-                                  width="12"
-                                  height="2"
-                                  rx="1"
-                                  fill="currentColor"
-                                ></rect>
-                              </svg>
-                            </span>
-                          </span>
-                          <span className="menu-title">Chat</span>
-                          <span className="menu-arrow"></span>
-                        </span>
-                        <div
-                          className="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown menu-rounded-0 py-lg-4 w-lg-225px"
-                          data-kt-menu-dismiss="true"
-                        >
-                          <div className="menu-item me-lg-1">
-                            <a
-                              className="menu-link py-3"
-                              href="/metronic8/react/demo4/apps/chat/private-chat"
-                            >
-                              <span className="menu-bullet">
-                                <span className="bullet bullet-dot"></span>
-                              </span>
-                              <span className="menu-title">Private Chat</span>
-                            </a>
-                          </div>
-                          <div className="menu-item me-lg-1">
-                            <a
-                              className="menu-link py-3"
-                              href="/metronic8/react/demo4/apps/chat/group-chat"
-                            >
-                              <span className="menu-bullet">
-                                <span className="bullet bullet-dot"></span>
-                              </span>
-                              <span className="menu-title">Group Chart</span>
-                            </a>
-                          </div>
-                          <div className="menu-item me-lg-1">
-                            <a
-                              className="menu-link py-3"
-                              href="/metronic8/react/demo4/apps/chat/drawer-chat"
-                            >
-                              <span className="menu-bullet">
-                                <span className="bullet bullet-dot"></span>
-                              </span>
-                              <span className="menu-title">Drawer Chart</span>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="menu-item me-lg-1">
-                        <a
-                          className="menu-link py-3"
-                          href="/metronic8/react/demo4/apps/user-management/users"
-                        >
-                          <span className="menu-icon">
-                            <span className="svg-icon svg-icon-2">
-                              <svg
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                                className="mh-50px"
-                              >
-                                <path
-                                  opacity="0.3"
-                                  d="M20.5543 4.37824L12.1798 2.02473C12.0626 1.99176 11.9376 1.99176 11.8203 2.02473L3.44572 4.37824C3.18118 4.45258 3 4.6807 3 4.93945V13.569C3 14.6914 3.48509 15.8404 4.4417 16.984C5.17231 17.8575 6.18314 18.7345 7.446 19.5909C9.56752 21.0295 11.6566 21.912 11.7445 21.9488C11.8258 21.9829 11.9129 22 12.0001 22C12.0872 22 12.1744 21.983 12.2557 21.9488C12.3435 21.912 14.4326 21.0295 16.5541 19.5909C17.8169 18.7345 18.8277 17.8575 19.5584 16.984C20.515 15.8404 21 14.6914 21 13.569V4.93945C21 4.6807 20.8189 4.45258 20.5543 4.37824Z"
-                                  fill="currentColor"
-                                ></path>
-                                <path
-                                  d="M14.854 11.321C14.7568 11.2282 14.6388 11.1818 14.4998 11.1818H14.3333V10.2272C14.3333 9.61741 14.1041 9.09378 13.6458 8.65628C13.1875 8.21876 12.639 8 12 8C11.361 8 10.8124 8.21876 10.3541 8.65626C9.89574 9.09378 9.66663 9.61739 9.66663 10.2272V11.1818H9.49999C9.36115 11.1818 9.24306 11.2282 9.14583 11.321C9.0486 11.4138 9 11.5265 9 11.6591V14.5227C9 14.6553 9.04862 14.768 9.14583 14.8609C9.24306 14.9536 9.36115 15 9.49999 15H14.5C14.6389 15 14.7569 14.9536 14.8542 14.8609C14.9513 14.768 15 14.6553 15 14.5227V11.6591C15.0001 11.5265 14.9513 11.4138 14.854 11.321ZM13.3333 11.1818H10.6666V10.2272C10.6666 9.87594 10.7969 9.57597 11.0573 9.32743C11.3177 9.07886 11.6319 8.9546 12 8.9546C12.3681 8.9546 12.6823 9.07884 12.9427 9.32743C13.2031 9.57595 13.3333 9.87594 13.3333 10.2272V11.1818Z"
-                                  fill="currentColor"
-                                ></path>
-                              </svg>
-                            </span>
-                          </span>
-                          <span className="menu-title">User management</span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div
+                    <NavLinksElement text="Chat" icons="bi fs-3 bi -person">
+                      <NavLinksChildElement text="Private chat" />
+                      <NavLinksChildElement text="Group chat" />
+                      <NavLinksChildElement text="Drawer chat" />
+                    </NavLinksElement>
+                  </NavLinks>
+                  <NavLinks
+                    text="Mega Menu"
                     className="menu-item menu-lg-down-accordion me-lg-1"
                     data-kt-menu-trigger="click"
                     data-kt-menu-placement="bottom-start"
                   >
-                    <span className="menu-link py-3">
-                      <span className="menu-title">Mega menu</span>
-                    </span>
                     <div
                       className="menu-sub menu-sub-lg-down-accordion menu-sub-lg-dropdown w-100 w-lg-600px p-5 p-lg-5"
                       data-kt-menu-dismiss="true"
@@ -547,139 +194,34 @@ export default function () {
                       <div className="row" data-kt-menu-dismiss="true">
                         <div className="col-lg-4 border-left-lg-1">
                           <div className="menu-inline menu-column menu-active-bg">
-                            <div className="menu-item">
-                              <a href="#" className="menu-link">
-                                <span className="menu-bullet">
-                                  <span className="bullet bullet-dot"></span>
-                                </span>
-                                <span className="menu-title">Example link</span>
-                              </a>
-                            </div>
-                            <div className="menu-item">
-                              <a href="#" className="menu-link">
-                                <span className="menu-bullet">
-                                  <span className="bullet bullet-dot"></span>
-                                </span>
-                                <span className="menu-title">Example link</span>
-                              </a>
-                            </div>
-                            <div className="menu-item">
-                              <a href="#" className="menu-link">
-                                <span className="menu-bullet">
-                                  <span className="bullet bullet-dot"></span>
-                                </span>
-                                <span className="menu-title">Example link</span>
-                              </a>
-                            </div>
-                            <div className="menu-item">
-                              <a href="#" className="menu-link">
-                                <span className="menu-bullet">
-                                  <span className="bullet bullet-dot"></span>
-                                </span>
-                                <span className="menu-title">Example link</span>
-                              </a>
-                            </div>
-                            <div className="menu-item">
-                              <a href="#" className="menu-link">
-                                <span className="menu-bullet">
-                                  <span className="bullet bullet-dot"></span>
-                                </span>
-                                <span className="menu-title">Example link</span>
-                              </a>
-                            </div>
+                            <InLineChildElement text="Example link"></InLineChildElement>
+                            <InLineChildElement text="Example link"></InLineChildElement>
+                            <InLineChildElement text="Example link"></InLineChildElement>
+                            <InLineChildElement text="Example link"></InLineChildElement>
+                            <InLineChildElement text="Example link"></InLineChildElement>
                           </div>
                         </div>
                         <div className="col-lg-4 border-left-lg-1">
                           <div className="menu-inline menu-column menu-active-bg">
-                            <div className="menu-item">
-                              <a href="#" className="menu-link">
-                                <span className="menu-bullet">
-                                  <span className="bullet bullet-dot"></span>
-                                </span>
-                                <span className="menu-title">Example link</span>
-                              </a>
-                            </div>
-                            <div className="menu-item">
-                              <a href="#" className="menu-link">
-                                <span className="menu-bullet">
-                                  <span className="bullet bullet-dot"></span>
-                                </span>
-                                <span className="menu-title">Example link</span>
-                              </a>
-                            </div>
-                            <div className="menu-item">
-                              <a href="#" className="menu-link">
-                                <span className="menu-bullet">
-                                  <span className="bullet bullet-dot"></span>
-                                </span>
-                                <span className="menu-title">Example link</span>
-                              </a>
-                            </div>
-                            <div className="menu-item">
-                              <a href="#" className="menu-link">
-                                <span className="menu-bullet">
-                                  <span className="bullet bullet-dot"></span>
-                                </span>
-                                <span className="menu-title">Example link</span>
-                              </a>
-                            </div>
-                            <div className="menu-item">
-                              <a href="#" className="menu-link">
-                                <span className="menu-bullet">
-                                  <span className="bullet bullet-dot"></span>
-                                </span>
-                                <span className="menu-title">Example link</span>
-                              </a>
-                            </div>
+                            <InLineChildElement text="Example link"></InLineChildElement>
+                            <InLineChildElement text="Example link"></InLineChildElement>
+                            <InLineChildElement text="Example link"></InLineChildElement>
+                            <InLineChildElement text="Example link"></InLineChildElement>
+                            <InLineChildElement text="Example link"></InLineChildElement>
                           </div>
                         </div>
                         <div className="col-lg-4 border-left-lg-1">
                           <div className="menu-inline menu-column menu-active-bg">
-                            <div className="menu-item">
-                              <a href="#" className="menu-link">
-                                <span className="menu-bullet">
-                                  <span className="bullet bullet-dot"></span>
-                                </span>
-                                <span className="menu-title">Example link</span>
-                              </a>
-                            </div>
-                            <div className="menu-item">
-                              <a href="#" className="menu-link">
-                                <span className="menu-bullet">
-                                  <span className="bullet bullet-dot"></span>
-                                </span>
-                                <span className="menu-title">Example link</span>
-                              </a>
-                            </div>
-                            <div className="menu-item">
-                              <a href="#" className="menu-link">
-                                <span className="menu-bullet">
-                                  <span className="bullet bullet-dot"></span>
-                                </span>
-                                <span className="menu-title">Example link</span>
-                              </a>
-                            </div>
-                            <div className="menu-item">
-                              <a href="#" className="menu-link">
-                                <span className="menu-bullet">
-                                  <span className="bullet bullet-dot"></span>
-                                </span>
-                                <span className="menu-title">Example link</span>
-                              </a>
-                            </div>
-                            <div className="menu-item">
-                              <a href="#" className="menu-link">
-                                <span className="menu-bullet">
-                                  <span className="bullet bullet-dot"></span>
-                                </span>
-                                <span className="menu-title">Example link</span>
-                              </a>
-                            </div>
+                            <InLineChildElement text="Example link"></InLineChildElement>
+                            <InLineChildElement text="Example link"></InLineChildElement>
+                            <InLineChildElement text="Example link"></InLineChildElement>
+                            <InLineChildElement text="Example link"></InLineChildElement>
+                            <InLineChildElement text="Example link"></InLineChildElement>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </NavLinks>
                 </div>
               </div>
             </div>
@@ -3100,6 +2642,6 @@ export default function () {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

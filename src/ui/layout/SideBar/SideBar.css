@@ -1,0 +1,12 @@
+.sidebar-container{
+    background-color: blueviolet;
+    position: fixed;
+    left:auto;
+    z-index: 50;
+    display:flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 90vh;
+    width: 20vh;
+    
+}

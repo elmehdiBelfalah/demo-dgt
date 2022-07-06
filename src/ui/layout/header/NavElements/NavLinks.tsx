@@ -1,7 +1,11 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 type NavlinksProps = {
   text: string;
+  className?: string;
+  "data-kt-menu-trigger"?: string;
+  "data-kt-menu-placement"?: string;
+  children?: ReactNode;
 };
 export default function NavLinks(props: NavlinksProps) {
   return (
